@@ -1,0 +1,23 @@
+{
+  "name": "tianmao",
+  "version": "1.0.0",
+  "description": "第一个练手项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yk9100/tianmao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yk9100/tianmao/issues"
+  },
+  "homepage": "https://github.com/yk9100/tianmao#readme",
+  "devDependencies": {
+    "gulp": "^4.0.0"
+  }
+}
