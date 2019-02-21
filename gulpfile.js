@@ -10,3 +10,8 @@ function sass () {
 				.pipe(gulp.dest('./dist'));
 }
 gulp.task('sass', sass);
+
+function html () {
+	return gulp.src('./src/**/*.html').pipe(gulp.dest('./dist'));
+}
+gulp.task('html', html);
