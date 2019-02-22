@@ -15,3 +15,6 @@ function html () {
 	return gulp.src('./src/**/*.html').pipe(gulp.dest('./dist'));
 }
 gulp.task('html', html);
+
+var hc = gulp.series(sass, html);
+gulp.task('hc', hc);
