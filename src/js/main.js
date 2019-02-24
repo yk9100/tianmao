@@ -60,3 +60,19 @@ const fqAuto = () => {
 }
 fqAuto();
 
+//返回顶部
+let fanhui = document.querySelector('div#lfixed ul li:last-child');
+let lfixed = document.querySelector('div#lfixed');
+fanhui.onclick = () => {
+	document.documentElement.scrollTop = 0;
+	document.body.scrollTop = 0;
+}
+window.onscroll = () => {
+	let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+	if(scrollTop > 800) {
+		lfixed.style.display = 'block';
+	} else {
+		lfixed.style.display = 'none';
+	}
+}
+

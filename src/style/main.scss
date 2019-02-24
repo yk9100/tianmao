@@ -225,3 +225,12 @@ footer div.last div.ww ul {height: 35px; padding:5px 0;}
 footer div.last div.ww ul li{float:left;margin-right:5px;}
 footer div.last div.ww ul li a{color:#fff; font-size:13px;}
 footer div.last div.ww pre{color:#a4a4a4;}
+
+/*侧边栏*/
+div#lfixed{width: 36px; height: 369px; position: fixed; bottom:50px; left:20px; display: none;}
+div#lfixed ul{height: 100%; width: 100%;}
+div#lfixed ul li{height: 36px; width: 100%; margin-bottom: 2px; line-height: 12px;  background: rgba(0,0,0,.6); overflow: hidden;}
+div#lfixed ul li a{font-size: 14px; display: block; text-align: center; color:#fff; margin-top:6px;}
+div#lfixed ul li:nth-child(1){background: #ff0036}
+div#lfixed ul li:nth-child(1) a{height: 36px; line-height: 36px; margin-top:0;}
+div#lfixed ul li:hover{background: #64c333;}

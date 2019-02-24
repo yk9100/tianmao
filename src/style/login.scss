@@ -1,0 +1,45 @@
+/*======================================PC端样式重置==============================================*/
+/*========================================清样式==================================================*/
+body,h1,h2,h3,h4,h5,h6,a,p,img,input,ul,ol,dl,li,dd,dt,figure,form,fieldset,legend{margin: 0;padding: 0;}
+header,nav,main,article,section,aside,footer,figure,figcaption,details,summary{display: block;}
+					        /*新标签在低版本浏览器默认识别为内联元素，需要转块*/
+img{display: block; border: 0;}                      /*低版本浏览器里面，图片加超链接会出现border */
+input{outline: none;border: none;}                                             /* 表单蓝色外围轮廓*/
+ul,ol{list-style: none;}                                                            /*清除列表符号*/
+/*===================================第二步：定义全局样式=========================================*/
+body{font-size: 12px; font-family: "微软雅黑";color: #333333;background:
+#fff;}
+
+html,body{height: 100%;}
+/*===================================第san步：清除超链接样式======================================*/
+a{text-decoration: none; color:#999;}
+a:visited { color:#999; }
+a:hover, a:active, a:focus { color:#ff0036; text-decoration:none; }
+/*===================================第四步：定义公共样式=========================================*/
+.w{width: 1190px;margin: 0 auto;}
+.l{float: left;}
+.r{float: right;}
+
+
+header{height: 88px;}
+header div.w{height: 100%; }
+header div.w a{display: block; padding:22px 0;}
+header div.w a img{height: 28px; width: 190px}
+
+main div.w{position: relative;}
+main div.w div.login {width: 350px; height: 350px; position: absolute; right:90px; background: #fff; top:100px;
+padding:25px; box-sizing: border-box;}
+main div.w div.login h2{font-size:16px; color:#6c6c6c; margin-top:15px;}
+main div.w div.login img{display: block; margin:40px auto;}
+main div.w div.login p{height: 36px; width: 144px; margin-left:90px; color: #9c9c9c;}
+main div.w div.login p a{color:#ff0036;}
+main div.w div.login span{display: block; margin-top:25px;}
+main div.w div.login span a{float: right; margin-right:10px;}
+
+
+footer div.last{height: 220px; background: #fff;}
+footer div.last div.ww{width: 1190px; height: 100%; margin:auto;}
+footer div.last div.ww ul {height: 26px; padding:5px 0;}
+footer div.last div.ww ul li{float:left;margin-right:5px;}
+footer div.last div.ww ul li a{color:black; font-size:13px;}
+footer div.last div.ww pre{color:#666; margin:0;}
