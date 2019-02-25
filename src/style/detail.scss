@@ -1,0 +1,117 @@
+/*======================================PC端样式重置==============================================*/
+/*========================================清样式==================================================*/
+body,h1,h2,h3,h4,h5,h6,a,p,img,input,ul,ol,dl,li,dd,dt,figure,form,fieldset,legend{margin: 0;padding: 0;}
+header,nav,main,article,section,aside,footer,figure,figcaption,details,summary{display: block;}
+					        /*新标签在低版本浏览器默认识别为内联元素，需要转块*/
+img{display: block; border: 0;}                      /*低版本浏览器里面，图片加超链接会出现border */
+input{outline: none;border: none;}                                             /* 表单蓝色外围轮廓*/
+ul,ol{list-style: none;}                                                            /*清除列表符号*/
+/*===================================第二步：定义全局样式=========================================*/
+body{font-size: 12px; font-family: "微软雅黑";color: #333333;background:
+#F5F5F5;}
+
+html,body{height: 100%;}
+/*===================================第san步：清除超链接样式======================================*/
+a{text-decoration: none; color:#999;}
+a:visited { color:#999; }
+a:hover, a:active, a:focus { color:#ff0036; text-decoration:none; }
+/*===================================第四步：定义公共样式=========================================*/
+.w{width: 1230px;margin: 0 auto;}
+.l{float: left;}
+.r{float: right;}
+
+nav{height:32px; background:#f2f2f2; line-height:32px; border-bottom:1px solid #e5e5e5;}
+nav div.w{height:100%;}
+nav div.w div.l{width:270px; height:100%;}
+nav div.w div.r{ height:100%;}
+nav div.w div.l span{color:#999;}
+nav div.w div.l a{margin-left:19px;}
+nav div.w div.r>ul{height:100%;}
+nav div.w div.r>ul>li{float:left; padding:0 15px; height:100%;}
+nav div.w div.r ul li:nth-child(1) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(1):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+nav div.w div.r ul li:nth-child(3) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(3):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+nav div.w div.r ul li:nth-child(6) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(6):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+
+nav div.w div.r ul li:nth-child(1):hover{background:#fff;}
+nav div.w div.r ul li:nth-child(1):hover ul{display:block;}
+nav div.w div.r ul li:nth-child(3):hover{background:#fff;}
+nav div.w div.r ul li:nth-child(6):hover{background:#fff;}
+
+nav div.w div.r ul li:nth-child(1){position:relative;border:1px solid #f2f2f2; border-bottom:0}
+nav div.w div.r ul li:nth-child(1) ul{left:-1px; display:none; border:1px solid #f2f2f2; border-top:0;background: #fff;}
+nav div.w div.r ul li:nth-child(1) ul li{padding: 0px 9px;
+    width: 86px; height:25px; line-height:25px; border:0 }
+nav div.w div.r ul li:nth-child(1) ul{position:absolute;}
+
+
+/*section #search*/
+/*logo*/
+section#search{height: 85px; background: white; border-bottom:1px solid #C8BAAA;}
+section#search div.w{height: 100%;}
+section#search div.w ul.l{height: 38px; }
+section#search div.w ul.l img{width: 152px; height: 22px}
+section#search div.w ul.l li{float:left; margin-top:15px;}
+section#search div.w ul.l li a {display: block;  padding:0 10px;
+box-sizing: border-box; }
+section#search div.w ul.l li:nth-child(1) a {margin-top:6px;}
+section#search div.w ul.l li:nth-child(2) a {border-right:1px solid #ccc; border-left:1px
+	solid #ccc;}
+section#search div.w ul.l li:nth-child(2) h3{font-size:12; color:#333;}
+section#search div.w ul.l li:nth-child(2) p{background: url(../resource/imgs/jl.gif) no-repeat;
+background-position: -21px -2px;}
+section#search div.w ul.l li:nth-child(2) span{display: inline-block; background: #f4c985;
+color:#856651; height: 16px; line-height: 16px; font-size:12px; border:1px solid #e7ba77;
+border-radius:2px;}
+section#search div.w ul.l li:nth-child(3) span{font-size:13px;}
+section#search div.w ul.l li:nth-child(3) a {border-right:1px solid #ccc; }
+
+/*section #search*/
+/*search*/
+section#search div.w div.r{width: 541px; height:70px; margin-top:15px;}
+section#search div.w div.r form{display: block; /*width:485px;*/ height: 36px}
+section#search div.w div.r form input{float:left; border:0;}
+section#search div.w div.r form input:nth-child(1){border:2px solid #ff0036; width:375px;
+height:30px; text-indent:10px; color:#ccc;}
+section#search div.w div.r form input:nth-child(2){width: 80px; height: 34px; background: #ff0036;
+color:#fff; font-size:16px; line-height: 30px; text-align: center; cursor: pointer;}
+section#search div.w div.r form input:nth-child(3){width: 80px; height: 34px; background: black;
+color:#fff; font-size:16px; line-height: 30px; text-align: center; margin-left:2px;cursor: pointer;}
+section#search div.w div.r ul{height:19px;}
+section#search div.w div.r ul li{float:left;}
+section#search div.w div.r ul li a{padding:0 13px; border-right:1px solid #ccc;}
+section#search div.w div.r ul li:last-child a{border:0;}
+section#search div.w div.r ul li:first-child a{padding-left:0;}
+
+/*header*/
+header{height:150px; background: url(../resource/imgs/qj.jpg) no-repeat;
+background-position: -294px 0px;}
+header div.w div a{display: block; float:left; width:220px; height: 100px;}
+
+/*section #fangd*/
+section#fangd{height: 687px; margin-top:20px;}
+section#fangd div.w{height: 100%;}
+section#fangd div.w div{float:left;}
+section#fangd div.w div.left{width:460px; height:604px; }
+section#fangd div.w div.left img{width: 312px; height: 418px; display: block; margin:auto;}
+section#fangd div.w div.left div.small{width: 312px; height: 418px; position: relative;margin-left:50px;}
+section#fangd div.w div.left div.small:after{content: ""; display: block; clear: both;}
+
+section#fangd div.w div.left div.slide{width:150px; height: 150px; background:url(../resource/imgs/float.png);
+position: absolute; top:0px; left:0px; display: none;}
+section#fangd div.w div.left div.zhe{position: absolute; height: 100%; width: 100%; top:0;
+left:0; z-index: 1;}
+section#fangd div.w div.left div.big{width: 375px; height: 375px; position: absolute; top:0;
+left:360px; background: url(../resource/imgs/fdg1.jpg) no-repeat; background-position: 0px 0px;
+display: none;}
+section#fangd div.w div.left ul{height: 60px; }
+section#fangd div.w div.left ul li{float:left; width: 46px; height:60px; margin:10px 5px;
+background: black}
+
+section#fangd div.w div.middle{width:530px; height: 687px;}
+section#fangd div.w div.right{width:200px; height:687px;}

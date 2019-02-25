@@ -1,3 +1,14 @@
+//let proArray = JSON.parse(decodeURIComponent(location.search.slice(5)));
+let proArray = decodeURIComponent(location.search.slice(5));
+//console.log(proArray);
+if(proArray !== null && proArray !== '') {
+	//console.log('我是有内容的');
+	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'none';
+	document.querySelector('nav div.w div.l span.user').innerHTML = `欢迎，${proArray}`;
+} else {
+	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'inline-block';
+}
+
 let lb = document.querySelectorAll('section#banner ul.slide li');
 let stick = document.querySelectorAll('section#banner ul.stick li')
 let len = lb.length;
