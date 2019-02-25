@@ -26,6 +26,7 @@ header div.w{height: 100%; }
 header div.w a{display: block; padding:22px 0;}
 header div.w a img{height: 28px; width: 190px}
 
+/*扫码登录*/
 main div.w{position: relative;}
 main div.w div.login {width: 350px; height: 350px; position: absolute; right:90px; background: #fff; top:100px;
 padding:25px; box-sizing: border-box;}
@@ -35,6 +36,14 @@ main div.w div.login p{height: 36px; width: 144px; margin-left:90px; color: #9c9
 main div.w div.login p a{color:#ff0036;}
 main div.w div.login span{display: block; margin-top:25px;}
 main div.w div.login span a{float: right; margin-right:10px;}
+
+/*密码登录*/
+main div.w div.login input {display: block; width: 240px; height: 18px; padding:11px 0;
+padding-left:50px; padding-right: 8; border:1px solid #ccc; color:#999; margin:
+26px auto; margin-bottom: 0}
+main div.w div.login button{width: 300px; height: 42px; color:#fff; font-size: 16px;
+line-height: 42px; background: #ff0036; text-align: center; font-weight: bold;
+margin:26px auto;margin-bottom: 0; border:0;}
 
 
 footer div.last{height: 220px; background: #fff;}
