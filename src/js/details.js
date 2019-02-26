@@ -38,3 +38,122 @@ box.onmouseout = () => {
 	big.style.display = 'none';
 	slide.style.display = 'none';
 }
+
+let lis = document.querySelectorAll('section#fangd div.w div.left ul li');
+for(let i = 0 ; i < lis.length; i++) {
+	lis[i].onmouseover = function () {
+		document.querySelector('.fdfocus').className = '';
+		this.className = 'fdfocus';
+		box.querySelector('img').src = `../resource/imgs/fdn${i+1}.jpg`;
+		big.style.background = `url("../resource/imgs/fdg${i+1}.jpg")`;
+	}
+}
+
+let jian = document.querySelector('.jian');
+let jia = document.querySelector('.jia')
+let count = document.querySelector('.count').value;
+jia.onclick = () => {
+	count++;
+	document.querySelector('.count').value = count;
+}
+jian.onclick = () => {
+	count--;
+	if(count < 1) {
+		count=1;
+	}
+	document.querySelector('.count').value = count;
+}
+
+let canshu = document.querySelectorAll('main div.middle ul.canshu li');
+for(let i = 0; i < canshu.length; i++) {
+	canshu[i].onclick = function () {
+		document.querySelector('.csfocus').className = '';
+		// console.log(this);
+		this.className = 'csfocus';
+	}
+}
+
+//加载用户评论
+let pageNo = 1;
+
+	let xhr = new XMLHttpRequest();
+	let xhr2 = new XMLHttpRequest();
+	xhr2.open('get', `../js/api/page.php`, true);
+	xhr2.onreadystatechange = function () {
+		if(this.readyState !==4) {
+			
+			return;
+		}
+		if(this.status >= 200 && this.status < 300) {
+			let page = Math.floor(this.responseText/10);
+			for(let i = 1; i <= page; i++) {
+				createLi(i);
+			}
+		}
+	}
+	xhr2.send();
+
+	xhr.open('get', `../js/api/pinglun.php?pageNo=${pageNo}`, true);
+	xhr.onreadystatechange = function () {
+		if(this.readyState !==4) {
+			return;
+		}
+		if(this.status >= 200 && this.status < 300) {
+			let data = JSON.parse(this.responseText);
+			for(let i = 0; i < data.length; i++) {
+				createTr(data[i]);
+			}
+			//console.log(this.responseText);
+		}
+	}
+	xhr.send();
+
+
+const createTr = (data) => {
+	let tr = document.createElement('tr');
+	let trInner = `
+		<td class="first">
+							<div class="text">${data.detail}</div>
+							<div class="photo"></div>
+							<div class="data">${data.data}</div>
+		</td>
+		<td class="middle">
+							<p>颜色:<span>${data.color}</span></p>
+							<p>尺码:<span>${data.size}</span></p>
+		</td>
+		<td class="last">
+							<p>${data.user}</p>
+		</td>
+	`
+	tr.innerHTML = trInner;
+	document.querySelector('tbody').appendChild(tr);
+}
+const createLi = (index) => {
+	let li = document.createElement('li');
+	li.innerHTML = index;
+	document.querySelector('main div.middle ul.page').appendChild(li);
+}
+
+//分页
+window.onload = function () {
+let page = document.querySelectorAll('main div.middle ul.page li');
+for(let i = 0; i < page.length; i++) {
+	page[i].onclick = function () {
+		let xhr = new XMLHttpRequest();
+		xhr.open('get', `../js/api/pinglun.php?pageNo=${i}`, true);
+		xhr.onreadystatechange = function () {
+			if(this.readyState !==4) {
+				return;
+			}
+			if(this.status >= 200 && this.status < 300) {
+				document.querySelector('tbody').innerHTML = '';
+				let data = JSON.parse(this.responseText);
+				for(let i = 0; i < data.length; i++) {
+					createTr(data[i]);
+				}
+			}
+		}
+		xhr.send();
+	}
+}
+}

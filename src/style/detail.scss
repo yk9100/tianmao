@@ -8,7 +8,7 @@ input{outline: none;border: none;}                                             /
 ul,ol{list-style: none;}                                                            /*清除列表符号*/
 /*===================================第二步：定义全局样式=========================================*/
 body{font-size: 12px; font-family: "微软雅黑";color: #333333;background:
-#F5F5F5;}
+#fff;}
 
 html,body{height: 100%;}
 /*===================================第san步：清除超链接样式======================================*/
@@ -93,25 +93,195 @@ header{height:150px; background: url(../resource/imgs/qj.jpg) no-repeat;
 background-position: -294px 0px;}
 header div.w div a{display: block; float:left; width:220px; height: 100px;}
 
-/*section #fangd*/
-section#fangd{height: 687px; margin-top:20px;}
+/*section #fangd left*/
+section#fangd{height: 604px; margin-top:20px; background: #fff;}
 section#fangd div.w{height: 100%;}
 section#fangd div.w div{float:left;}
-section#fangd div.w div.left{width:460px; height:604px; }
+section#fangd div.w div.left{width:460px; height:604px; background: #fff;}
 section#fangd div.w div.left img{width: 312px; height: 418px; display: block; margin:auto;}
 section#fangd div.w div.left div.small{width: 312px; height: 418px; position: relative;margin-left:50px;}
 section#fangd div.w div.left div.small:after{content: ""; display: block; clear: both;}
 
 section#fangd div.w div.left div.slide{width:150px; height: 150px; background:url(../resource/imgs/float.png);
-position: absolute; top:0px; left:0px; display: none;}
+position: absolute; top:0px; left:0px; display: none; cursor: move}
 section#fangd div.w div.left div.zhe{position: absolute; height: 100%; width: 100%; top:0;
 left:0; z-index: 1;}
 section#fangd div.w div.left div.big{width: 375px; height: 375px; position: absolute; top:0;
 left:360px; background: url(../resource/imgs/fdg1.jpg) no-repeat; background-position: 0px 0px;
 display: none;}
-section#fangd div.w div.left ul{height: 60px; }
-section#fangd div.w div.left ul li{float:left; width: 46px; height:60px; margin:10px 5px;
-background: black}
+section#fangd div.w div.left ul{height: 60px; margin:420px auto; width:400px; margin-bottom: 0;}
+section#fangd div.w div.left ul li{float:left; width: 46px; height:60px; margin:10px 12px;
+/*background: black;*/ border:2px solid transparent;}
+section#fangd div.w div.left ul li.fdfocus{border-color:red;}
+section#fangd div.w div.left ul li img{width:100%; height:100%;}
 
-section#fangd div.w div.middle{width:530px; height: 687px;}
-section#fangd div.w div.right{width:200px; height:687px;}
+section#fangd div.w div.left p{height: 82px; width: 460px; padding:40px 40px; padding-bottom:25px;
+box-sizing: border-box;}
+section#fangd div.w div.left p a:nth-of-type(1){margin:24px; color:#999;}
+section#fangd div.w div.left p a:nth-of-type(2) {float:right;}
+
+/*section #fangd middle*/
+section#fangd div.w div.middle{width:530px; height: 604px; border-right:1px solid #ccc;
+padding-right: 15px}
+section#fangd div.w div.middle h2{font-size:16px; font-weight: 700; color:#000; line-height: 1;}
+section#fangd div.w div.middle h3{font-size:14px; font-weight: normal;
+ color:#ff0036; padding-top:5px;}
+ section#fangd div.w div.middle h4{font-size:12px; color:#999; padding:0 10px; 
+ 	background: url(../resource/imgs/bg1.png) no-repeat; margin-top:15px;}
+ section#fangd div.w div.middle h4:nth-of-type(2){background: #fff; height:36px; line-height: 
+ 	36px; margin-top:0; }
+ section#fangd div.w div.middle h4 span{color:#ff0036; font-size:24px; margin-left:40px;}
+
+section#fangd div.w div.middle ul.mu1{width: 510px; height: 16px; padding:10px; border:1px dotted #c9c9c9 ;
+border-left:0; border-right:0;}
+section#fangd div.w div.middle ul.mu1 li{width: 49%; border-right:1px solid #ccc; float:left;
+text-align: center}
+section#fangd div.w div.middle ul.mu1 li span{color:#ff0036;}
+section#fangd div.w div.middle ul.mu1 li:last-child{border-right:0;}
+section#fangd div.w div.middle ul.mu1 li:last-child span{color:#280;}
+
+/*尺码*/
+section#fangd div.w div.middle dl{width: 500px; height:78px; margin-top:10px;}
+section#fangd div.w div.middle dl ul{width:420px; height:72px; border:0;}
+section#fangd div.w div.middle dl dt{width:66px;}
+section#fangd div.w div.middle dl dt,section#fangd div.w div.middle dl dd{float:left;}
+section#fangd div.w div.middle dl ul li{float:left; margin-right:5px; border:2px solid #ccc;
+text-align: center; margin-bottom:5px;}
+section#fangd div.w div.middle dl ul li a{display: block; height: 30px;padding:0 9px;
+line-height:30px; color:black;}
+section#fangd div.w div.middle dl ul li:hover{border-color:#ff0036;}
+section#fangd div.w div.middle dl span{display: inline-block; width: 30px; height: 30px; 
+line-height: 30px; text-align: center; border:1px solid #ccc; user-select: none;
+cursor: pointer;}
+section#fangd div.w div.middle dl input{width:40px; height: 30px;border:1px solid #ccc;}
+
+section#fangd div.w div.middle dl:last-of-type li{border:0;}
+
+section#fangd div.w div.middle div {width: 434px; height: 50px; padding-left:66px;}
+section#fangd div.w div.middle div a{display: block; float:left; width: 180px; height: 40px;
+line-height: 40px; text-align: center; font-size:16px;}
+section#fangd div.w div.middle div a:nth-child(1){background: #FFEDED; border:1px solid #ff0036;
+color:#ff0036; margin-right:10px;}
+section#fangd div.w div.middle div a:nth-child(2){background: #ff0036; border:1px solid #ff0036;
+color:#fff;}
+
+/*看了又看*/
+section#fangd div.w div.right{width:200px; height:604px; margin-left:20px;}
+section#fangd div.w div.right h2{height: 14px; line-height: 14px; font-size:12px; color:#999;
+text-align: center}
+section#fangd div.w div.right ul{width: 200px; height: 519px;}
+section#fangd div.w div.right ul li{margin-bottom:35px;}
+section#fangd div.w div.right ul li a{display: block; width:140px; margin:auto;}
+section#fangd div.w div.right ul li a img{width: 140px; height: 140px;}
+
+
+/*main left*/
+main{height: 1280px}
+main div.w >div{float:left;}
+main div.left{width: 190px;}
+main div.left div.pj{height: 190px; width:190px; border:1px solid #e5e5e5;}
+main div.left div.pj h2{height: 48px; background: #FAFAFA; line-height: 48px; text-indent: 20px;
+border-bottom:1px solid #e5e5e5;}
+main div.left div.pj h2 a{font-size:12px; color:black;}
+main div.left div.pj h2 span{display: inline-block;width: 20px; height: 20px; background: 
+url(../resource/imgs/jl.gif) no-repeat; background-position: -81px 0px;}
+main div.left div.pj p{height: 18px; width: 130px; margin: auto; margin-top:10px; color:#999;
+font-weight: 700;}
+main div.left div.pj p span{display: inline-block;width: 20px; height: 20px; background: #f04343;
+color:#ffd800; text-align: center; margin-right:5px;}
+main div.left div.pj>div:nth-of-type(1){width: 130px; height: 50px; margin:auto; margin-top:15px;
+text-align: center}
+main div.left div.pj>div:nth-of-type(1) h3{color:#999; font-weight: normal;}
+main div.left div.pj>div:nth-of-type(1) span{color:#ff0036; font-size:13px;}
+main div.left div.pj>div:nth-of-type(2){width: 150px; height: 26px;margin:auto;}
+main div.left div.pj>div:nth-of-type(2) a{display: block; float:left; width: 72px; height: 26px;
+line-height: 26px; text-align: center;}
+main div.left div.pj>div:nth-of-type(2) a:nth-child(1){background: black; color:#fff; border:1px 
+	solid black;margin-right:2px;}
+main div.left div.pj>div:nth-of-type(2) a:nth-child(2){background: #fafafa; color:black;
+border:1px solid #e5e5e5;}
+
+main div.left div.nv{background: url(../resource/imgs/nv.jpg) no-repeat;}
+main div.left div.nv a{display: block; width: 173px; height: 257px;}
+
+
+/*main middle*/
+main div.middle{width:790px; margin-left:26px;}
+main div.middle ul.canshu{width: 788px; height: 48px; border:1px solid #ccc;}
+main div.middle ul.canshu li{float:left; height: 48px; line-height: 48px; border-left:1px solid
+	transparent; border-right:1px solid transparent; cursor:pointer;}
+main div.middle ul.canshu li.csfocus{border-top:2px solid #ff0036;border-left:1px solid #CFBFB1;
+border-right:1px solid #CFBFB1; margin-top: -2px; /*margin-left: -1px;*/}
+main div.middle ul.canshu li.csfocus a{color:#ff0036;}
+main div.middle ul.canshu li a{padding:0 20px; border-right:1px dotted #ccc;}
+main div.middle ul.canshu li:last-of-type{float:right;}
+
+/*main middle section#tags*/
+main div.middle section.tags{width: 788px; height: 70px; padding:10px 0; border:1px solid #ccc;}
+main div.middle section.tags div.score{width: 75px; height:63px; padding:0 20px; float: left;}
+main div.middle section.tags div.score h2{height:18px; line-height: 18px; font-size:12px;
+color:#333; text-align: center;}
+main div.middle section.tags div.score span{display: block; width: 44px; height: 36px;
+font-size:31px; color:#FF781E; font-weight: bold; margin:auto;}
+main div.middle section.tags div.score p{width: 57px; height: 12px; margin:auto;
+background: url(../resource/imgs/jn.png) no-repeat; background-position: 0px -14px;}
+
+main div.middle section.tags dl{width: 580px; height:70px; float: left;}
+main div.middle section.tags dl dt{width: 12px; color:rgb(204, 204, 204); line-height: 12px;}
+main div.middle section.tags dl dt,main div.middle section.tags dl dd{float:left;}
+main div.middle section.tags dl dd{width: 550px;}
+main div.middle section.tags dl dd ul li{float: left; height: 22px; margin:0 7px;
+border:1px solid rgb(255, 215, 221); line-height: 22px; padding:0 10px; box-shadow: 
+rgb(242, 242, 242) 2px 2px 1px; margin-bottom:10px; color:#ff0036; cursor: pointer;}
+main div.middle section.tags dl dd ul li:hover{background: #FFEDED; border-color: #ff0036;}
+
+/*分页*/
+main div.middle ul.page{ height: 39px; border-left:1px solid #ccc; margin-top:20px;
+border-top:1px solid #ccc;float: left}
+main div.middle ul.page li{float:left; width:36px; height: 100%; line-height: 39px;
+text-align: center; border-right:1px solid #ccc; cursor: pointer; border-bottom:1px solid #ccc;}
+
+
+/*middle div.xuan*/
+main div.middle div.xuan{width: 768px; height:24px; padding:5px 10px; border:1px solid #ccc;
+background: #EFEFEF; line-height: 24px};
+
+/*middle table*/
+main div.middle table{width: 790px; vertical-align: middle; border-collapse:collapse;}
+main div.middle table tr{vertical-align: inherit; border-bottom:1px solid #ccc;}
+main div.middle table td.first{width: 494px; height: 97px; padding-left:7px; padding-right:30px;}
+main div.middle table td.middle{width: 135px; height: 97px; padding-left:7px; padding-right:7px;}
+main div.middle table td.last{width: 103px; height:97px; padding-left:7px;}
+
+/*main right*/
+main div.right{width:200px;}
+main div.right{width:200px; height:604px; margin-left:20px;}
+main div.right h2{height: 14px; line-height: 14px; font-size:12px; color:#999;
+text-align: center}
+main div.right ul{width: 200px; height: 519px;}
+main div.right ul li{margin-bottom:35px;}
+main div.right ul li a{display: block; width:140px; margin:auto;}
+main div.right ul li a img{width: 140px; height: 140px;}
+
+/*footer article*/
+footer{height: 600px;background: #fff;}
+footer div.w{}
+footer div.w article {height: 100px; width: 1190px; margin:25px auto; background: url(../resource/imgs/a1.jpg) no-repeat;}
+footer div.w article a{display: block; float: left; height: 100px; width: 25%;}
+
+/*footer aside*/
+footer div.w aside {width: 1190px; height: 213px; padding-top:20px; background: url(../resource/imgs/miao.png) no-repeat;
+background-position: 25px 182px; margin:auto; border-top:1px solid #ccc;}
+footer div.w aside ul{float:left; width: 186px; padding-left:50px;}
+footer div.w aside ul li{height: 20px; line-height: 20px; font-size:12px;}
+footer div.w aside ul li a{color:#8b8b8b;}
+footer div.w aside ul li:nth-child(1){height: 30px; line-height: 30px; font-size: 16px;}
+footer div.w aside ul li:nth-child(1) a{color: #646464;}
+
+/*footer last*/
+footer div.last{height: 220px; background: black; border-top:2px solid #ff0036;}
+footer div.last div.ww{width: 1230px; height: 100%; margin:auto;}
+footer div.last div.ww ul {height: 35px; padding:5px 0;}
+footer div.last div.ww ul li{float:left;margin-right:5px;}
+footer div.last div.ww ul li a{color:#fff; font-size:13px;}
+footer div.last div.ww pre{color:#a4a4a4;}
