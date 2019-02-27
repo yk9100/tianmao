@@ -21,8 +21,9 @@ login.onclick = () => {
 		if(this.status >= 200 && this.status < 300) {
 
 			if(this.responseText) {
-				document.cookie =`username=${username}`;
-				location.href="../index.html?pro=" + `${username}`;
+				// document.cookie =`username=${username}`;
+				// localStorage.setItem('username', username);
+				location.href="../index.html";
 			}
 
 		}

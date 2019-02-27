@@ -17,6 +17,7 @@
 		// 	$arr [] = $res;
 		// 	//echo json_encode($arr); 
 		// }
+		header("set-cookie:username=$username;path=/");
 		echo true;
 	} else {
 		echo '登录失败';

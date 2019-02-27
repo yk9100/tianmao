@@ -1,3 +1,27 @@
+const myCookie = (key) => {
+	let cookie = document.cookie;
+	let arr = cookie.split('; ');
+	let value;
+	for(let i = 0; i < arr.length; i++) {
+		value = arr[i].split('=');
+		if( value[0] === key) {
+			return value[1];
+		} else {
+			return null;
+		}
+	}
+}
+
+let username = myCookie('username');
+if(username !== null && username !== '') {
+	//console.log('我是有内容的');
+	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'none';
+	document.querySelector('nav div.w div.l span.user').innerHTML = `欢迎，${username}`;
+} else {
+	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'inline-block';
+}
+
+
 let slide = document.querySelector('section#fangd div.w div.left div.slide');
 let box = document.querySelector('section#fangd div.w div.left div.small');
 let big = document.querySelector('section#fangd div.w div.left div.big');
@@ -99,11 +123,12 @@ let pageNo = 1;
 			return;
 		}
 		if(this.status >= 200 && this.status < 300) {
+			//console.log(this.responseText);
 			let data = JSON.parse(this.responseText);
+			//console.log(data);
 			for(let i = 0; i < data.length; i++) {
 				createTr(data[i]);
 			}
-			//console.log(this.responseText);
 		}
 	}
 	xhr.send();
@@ -134,11 +159,37 @@ const createLi = (index) => {
 	document.querySelector('main div.middle ul.page').appendChild(li);
 }
 
+//传递数据到购物车界面
+document.querySelector('.cart').onclick = function () {
+	let count = document.querySelector('.count').value;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open('post', `../js/api/addcart.php`, true);
+	xhr.onreadystatechange = function () {
+		if(this.readyState !==4) {
+			
+			return;
+		}
+		if(this.status >= 200 && this.status < 300) {
+			// let data = JSON.parse(`'${this.responseText}'`);
+			console.log(this.responseText);
+			// location.href="../html/cart.html";
+		}
+	}
+	xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+	xhr.send(`username=${username}&count=${count}`);
+}
+
+
+
 //分页
 window.onload = function () {
+	//alert('页面加载完了');
 let page = document.querySelectorAll('main div.middle ul.page li');
+
 for(let i = 0; i < page.length; i++) {
 	page[i].onclick = function () {
+
 		let xhr = new XMLHttpRequest();
 		xhr.open('get', `../js/api/pinglun.php?pageNo=${i}`, true);
 		xhr.onreadystatechange = function () {

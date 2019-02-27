@@ -1,10 +1,28 @@
 //let proArray = JSON.parse(decodeURIComponent(location.search.slice(5)));
-let proArray = decodeURIComponent(location.search.slice(5));
+//let proArray = decodeURIComponent(location.search.slice(5));
 //console.log(proArray);
-if(proArray !== null && proArray !== '') {
+
+const myCookie = (key) => {
+	let cookie = document.cookie;
+	let arr = cookie.split('; ');
+	let value;
+	for(let i = 0; i < arr.length; i++) {
+		value = arr[i].split('=');
+		if( value[0] === key) {
+			return value[1];
+		} else {
+			return null;
+		}
+	}
+}
+
+let username = myCookie('username');
+
+
+if(username !== null && username !== '') {
 	//console.log('我是有内容的');
 	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'none';
-	document.querySelector('nav div.w div.l span.user').innerHTML = `欢迎，${proArray}`;
+	document.querySelector('nav div.w div.l span.user').innerHTML = `欢迎，${username}`;
 } else {
 	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'inline-block';
 }
@@ -40,7 +58,7 @@ autoPlay();
 //今日疯抢
 let qie = document.querySelectorAll('section.mart div.down div.r ul.qie li');
 let huan = document.querySelector('section.mart div.down div.r div.huan img');
-console.log(huan);
+//console.log(huan);
 let qLen = qie.length;
 let qIndex = 0;
 let huanMap = [{

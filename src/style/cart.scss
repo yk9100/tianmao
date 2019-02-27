@@ -1,0 +1,69 @@
+/*======================================PC端样式重置==============================================*/
+/*========================================清样式==================================================*/
+body,h1,h2,h3,h4,h5,h6,a,p,img,input,ul,ol,dl,li,dd,dt,figure,form,fieldset,legend{margin: 0;padding: 0;}
+header,nav,main,article,section,aside,footer,figure,figcaption,details,summary{display: block;}
+					        /*新标签在低版本浏览器默认识别为内联元素，需要转块*/
+img{display: block; border: 0;}                      /*低版本浏览器里面，图片加超链接会出现border */
+input{outline: none;border: none;}                                             /* 表单蓝色外围轮廓*/
+ul,ol{list-style: none;}                                                            /*清除列表符号*/
+/*===================================第二步：定义全局样式=========================================*/
+body{font-size: 12px; font-family: "微软雅黑";color: #333333;background:
+#fff;}
+
+html,body{height: 100%;}
+/*===================================第san步：清除超链接样式======================================*/
+a{text-decoration: none; color:#999;}
+a:visited { color:#999; }
+a:hover, a:active, a:focus { color:#ff0036; text-decoration:none; }
+/*===================================第四步：定义公共样式=========================================*/
+.w{width: 1230px;margin: 0 auto;}
+.l{float: left;}
+.r{float: right;}
+
+nav{height:32px; background:#f2f2f2; line-height:32px; border-bottom:1px solid #e5e5e5;}
+nav div.w{height:100%;}
+nav div.w div.l{width:270px; height:100%;}
+nav div.w div.r{ height:100%;}
+nav div.w div.l span{color:#999;}
+nav div.w div.l a{margin-left:19px;}
+nav div.w div.r>ul{height:100%;}
+nav div.w div.r>ul>li{float:left; padding:0 15px; height:100%;}
+nav div.w div.r ul li:nth-child(1) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(1):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+nav div.w div.r ul li:nth-child(3) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(3):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+nav div.w div.r ul li:nth-child(6) span{width:0; height:0; border-bottom:4px solid #f2f2f2;border-left:4px solid #f2f2f2;border-top:4px solid #ccc;border-right:4px solid #f2f2f2;margin-top:10px; display:inline-block; transition:all .2s; transform-origin:50% 25%; margin-left:2px;}
+nav div.w div.r ul li:nth-child(6):hover span{transform:rotate(180deg);border-bottom:4px solid #fff;border-left:4px solid #fff;border-top:4px solid #ccc;border-right:4px solid #fff;}
+
+
+nav div.w div.r ul li:nth-child(1):hover{background:#fff;}
+nav div.w div.r ul li:nth-child(1):hover ul{display:block;}
+nav div.w div.r ul li:nth-child(3):hover{background:#fff;}
+nav div.w div.r ul li:nth-child(6):hover{background:#fff;}
+
+nav div.w div.r ul li:nth-child(1){position:relative;border:1px solid #f2f2f2; border-bottom:0}
+nav div.w div.r ul li:nth-child(1) ul{left:-1px; display:none; border:1px solid #f2f2f2; border-top:0;background: #fff;}
+nav div.w div.r ul li:nth-child(1) ul li{padding: 0px 9px;
+    width: 86px; height:25px; line-height:25px; border:0 }
+nav div.w div.r ul li:nth-child(1) ul{position:absolute;}
+
+
+/*main */
+main{background: #fff;}
+main div.w table{width: 100%; border-collapse:collapse;background: #fff}
+main div.w table tr {height: 50px; line-height: 50px;}
+main div.w table tr.item{height:130px; background: #FFF8E1; border:1px solid #ccc;}
+main div.w table tr.item span{display: inline-block; width: 18px; height: 18px; line-height: 
+20px; text-align: center; background: #fff; border:1px solid #ccc; user-select: none;
+cursor: pointer;}
+main div.w table tr.item input.count{width: 40px; height: 20px; display: inline-block;}
+main div.w table tr.item td.price,main div.w table tr.item td.total{color:#ff0036; font-weight: 
+bold; width:115px;}
+main div.w table tr.item td.del{cursor: pointer;}
+main div.w div.jiesuan{height:50px; background: #E5E5E5; margin-top: 20px;}
+main div.w div.jiesuan a{float:right; width: 100px; height:50px; line-height: 50px; text-align: 
+center; color:#fff; background: #ff0036; font-size:16px;}
+main div.w div.jiesuan p{float:right; height: 50px; line-height: 50px;}
+main div.w div.jiesuan p span{display: inline-block; color:#ff0036;}
