@@ -20,6 +20,6 @@
 		header("set-cookie:username=$username;path=/");
 		echo true;
 	} else {
-		echo '登录失败';
+		echo false;
 	}
 ?>

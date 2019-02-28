@@ -2,7 +2,7 @@
 //let proArray = decodeURIComponent(location.search.slice(5));
 //console.log(proArray);
 
-const myCookie = (key) => {
+const getCookie = (key) => {
 	let cookie = document.cookie;
 	let arr = cookie.split('; ');
 	let value;
@@ -16,17 +16,40 @@ const myCookie = (key) => {
 	}
 }
 
-let username = myCookie('username');
+
+
+let username = getCookie('username');
 
 
 if(username !== null && username !== '') {
 	//console.log('我是有内容的');
 	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'none';
 	document.querySelector('nav div.w div.l span.user').innerHTML = `欢迎，${username}`;
+	document.querySelector('.relogin').style.display = 'none';
+	document.querySelector('.relogout').style.display = 'inline-block';
+	document.querySelector('.relogout').onclick = (e) => {
+		//console.log('aa');
+		e.preventDefault();
+		let xhr = new XMLHttpRequest();
+		xhr.open('get', `./js/api/delCookie.php`, true);
+		xhr.onreadystatechange = function () {
+			if(this.readyState !==4) {
+				console.log(this.status);
+				return;
+			}
+			if(this.status >= 200 && this.status < 300) {
+				history.go(0);
+			}
+		}
+		xhr.send();
+	}
 } else {
 	document.querySelector('nav div.w div.l a:nth-of-type(1)').style.display = 'inline-block';
+	document.querySelector('.relogin').style.display = 'inline-block';
+	document.querySelector('.relogout').style.display = 'none';
 }
 
+//轮播
 let lb = document.querySelectorAll('section#banner ul.slide li');
 let stick = document.querySelectorAll('section#banner ul.stick li')
 let len = lb.length;
@@ -53,6 +76,15 @@ const autoPlay = () =>{
 	},2000)
 }
 autoPlay();
+
+
+//轮播下的小杠杠stick
+for(let i = 0; i < stick.length; i++) {
+	stick[i].onclick = () => {
+		currentIndex = i;
+		slideTo(currentIndex);
+	}
+}
 
 
 //今日疯抢
@@ -96,6 +128,10 @@ fanhui.onclick = () => {
 	document.documentElement.scrollTop = 0;
 	document.body.scrollTop = 0;
 }
+
+
+
+//也跟屏幕滚动有点关系
 window.onscroll = () => {
 	let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 	if(scrollTop > 800) {
@@ -103,5 +139,58 @@ window.onscroll = () => {
 	} else {
 		lfixed.style.display = 'none';
 	}
+
+	//判断图片是否应该加载
+	if(isNeedLazyLoad()) {
+		lazyLoad();
+	}
+	
+}
+
+//判断图片是否应该加载
+const isNeedLazyLoad = () => {
+	let last = document.querySelector('section.lmart div.w ul li:last-of-type img');
+	let top = last.getBoundingClientRect().top;
+	if(top < window.innerHeight) {
+		return true
+	}
+	return false;
+}
+
+//传说中的懒加载
+let start = (new Date()).getTime();
+const lazyLoad = () => {
+	let now = (new Date()).getTime();
+	if((now - start) < 1000) {
+		return
+	}
+	start = now;
+	let xhr = new XMLHttpRequest();
+	xhr.open('get', './js/json/pro.json', true);
+	xhr.onreadystatechange = function () {
+		if(this.readyState !== 4) {
+			return;
+		}
+		if(this.status >= 200 && this.status < 300) {
+			let data = JSON.parse(this.responseText);
+			for(let i = 0; i < data.length; i++) {
+				createPro(data[i].src);
+			}
+		}
+	}
+	xhr.send();
+}
+
+const createPro = (src) => {
+	let li = document.createElement('li');
+	let liInner = `
+		<a href="javascript:;">
+												<img src="${src}" alt="">
+												<p>妮维雅男士洗面奶控油去黑头洗面奶深层清洁祛痘印青少年学生洁面</p>
+												<span>￥35</span>
+											</a>
+	`;
+	li.innerHTML = liInner;
+	document.querySelector('section.lmart div.w ul').appendChild(li);
 }
 

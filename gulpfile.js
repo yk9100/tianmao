@@ -37,7 +37,7 @@ function js () {
 gulp.task('js', js)
 
 function php () {
-	return gulp.src('./src/js/**/*.php')
+	return gulp.src('./src/js/**/*.{php,json}')
 		.pipe(gulp.dest('./dist/js'))
 }
 gulp.task('php', php)

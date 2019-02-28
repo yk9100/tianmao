@@ -226,7 +226,7 @@ footer div.last div.ww ul li{float:left;margin-right:5px;}
 footer div.last div.ww ul li a{color:#fff; font-size:13px;}
 footer div.last div.ww pre{color:#a4a4a4;}
 
-/*侧边栏*/
+/*左侧边栏*/
 div#lfixed{width: 36px; height: 369px; position: fixed; bottom:50px; left:20px; display: none;}
 div#lfixed ul{height: 100%; width: 100%;}
 div#lfixed ul li{height: 36px; width: 100%; margin-bottom: 2px; line-height: 12px;  background: rgba(0,0,0,.6); overflow: hidden;}
@@ -234,3 +234,16 @@ div#lfixed ul li a{font-size: 14px; display: block; text-align: center; color:#f
 div#lfixed ul li:nth-child(1){background: #ff0036}
 div#lfixed ul li:nth-child(1) a{height: 36px; line-height: 36px; margin-top:0;}
 div#lfixed ul li:hover{background: #64c333;}
+
+/*右侧边栏*/
+div#rfixed {width: 35px; height: 625px; position: fixed; top:0; right:0; background: rgba(0,0,0,.9);z-index: 2;}
+div#rfixed ul{width: 35px; height: 625px; }
+div#rfixed ul li{height: 35px; height:35px; line-height: 35px; text-align: center;
+margin:5px 0; cursor:pointer; position: relative;}
+div#rfixed ul li p{width: 70px; height: 35px; line-height: 35px; text-align: center; color:#fff;
+background: #666; position: absolute; top:0; left:-80px; opacity: 0; transition: all .5s;}
+div#rfixed ul li a{color:#fff;}
+div#rfixed ul li:nth-child(1){margin-top:150px;}
+div#rfixed ul li a span{display: inline-block; width: 12px; line-height: 12px; margin:auto;}
+div#rfixed ul li:hover{background: #ff0036;}
+div#rfixed ul li:hover p{opacity: 1; transform: translateX(10px);}

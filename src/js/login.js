@@ -24,6 +24,8 @@ login.onclick = () => {
 				// document.cookie =`username=${username}`;
 				// localStorage.setItem('username', username);
 				location.href="../index.html";
+			} else {
+				alert('用户名或密码错误');
 			}
 
 		}
